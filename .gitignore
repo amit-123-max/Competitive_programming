@@ -5,3 +5,4 @@
 *.tmp
 *.C_Swap_Game.cpp_*
 .vscode/c_cpp_properties.json
+.cph
