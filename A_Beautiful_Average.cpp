@@ -15,11 +15,25 @@ int32_t main(){
     while(t--){
         int n;
         cin>>n;
-        int m = INT_MIN;
+        bool e = false;
+        bool o = false;
+        vector<long long> arr(n);
         for(int i = 0;i<n;i++){
-            int a;cin>>a;
-            m = max(m,a);
+            cin>>arr[i];
+            if(arr[i]%2 != 0) o = true;
+            else e = true;
         }
-        cout<<m<<endl;
+        if(e && o){
+            sort(arr.begin(),arr.end());
+            for(int i = 0;i<n;i++){
+                cout<<arr[i]<<" ";
+            }
+        } 
+        else{
+            for(int i =0;i<n;i++){
+                cout<<arr[i]<<" ";
+            }   
+        }
+        cout<<endl;
     }
 }
