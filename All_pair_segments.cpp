@@ -15,7 +15,7 @@ int32_t main() {
 	    for(int i = 0;i<q;i++) cin>>queries[i];
 	    int prevb = 0;
 	    for(int i = 0;i<n;i++){
-	        int boundary = (n - i-1) + (prevb - max(0ll,(i-1)));
+	        int boundary = (n - i - 1) + (prevb - max(0ll,(i-1)));
 	        m[boundary]++;
 	        if(i<n-1){
 	           int num = arr[i+1] - arr[i] - 1;
