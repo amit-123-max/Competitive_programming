@@ -25,8 +25,7 @@ int32_t main() {
 	    for(int i = 0;i<n;i++) {
 	        if(arr[i]!=brr[i]) ma[brr[i]]--;
 	        if(ma[brr[i]]<0) {poss=false;break;}
-	    }
-	   // if(poss) cout<<"YAY"<<endl;
+        }
 	    if(poss && seq) cout<<"Yes"<<endl;
 	    else cout<<"No"<<endl;
 	}
