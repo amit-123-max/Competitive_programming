@@ -1,0 +1,37 @@
+from sklearn.datasets import load_breast_cancer
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+import pandas as pd
+
+# Read random state from input (OA platforms pass integer)
+try:
+    random_state = int(input().strip())
+except:
+    random_state = 42
+
+# 1. Load dataset
+data = load_breast_cancer()
+
+# 2. Create DataFrame
+df = pd.DataFrame(data.data, columns=data.feature_names)
+X = df
+y = pd.Series(data.target)
+
+# 3 & 4. Train-test split (80/20)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=random_state
+)
+
+# 5. Initialize and train Logistic Regression
+model = LogisticRegression(max_iter=2000)
+model.fit(X_train, y_train)
+
+# 6. Predict on test set
+y_pred = model.predict(X_test)
+
+# 7. Calculate accuracy
+accuracy = accuracy_score(y_test, y_pred)
+
+# Deliverable: Print final accuracy
+print(accuracy)
